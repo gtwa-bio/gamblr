@@ -11,23 +11,15 @@ issues](https://img.shields.io/github/issues/gtwa-bio/gamblr)](https://github.co
 pulls](https://img.shields.io/github/issues-pr/gtwa-bio/gamblr)](https://github.com/gtwa-bio/gamblr/pulls)
 <!-- badges: end -->
 
-The goal of `gamblr` is to …
+The goal of `gamblr` is to provide toy gambling functions to play with
+in R. It’s nothing special, but I hope you can have fun with it!
 
 ## Installation instructions
 
-Get the latest stable `R` release from
-[CRAN](http://cran.r-project.org/). Then install `gamblr` from
-[Bioconductor](http://bioconductor.org/) using the following code:
+Currently, there are no plans to submit this package to CRAN or
+BioConductor.
 
-``` r
-if (!requireNamespace("BiocManager", quietly = TRUE)) {
-    install.packages("BiocManager")
-}
-
-BiocManager::install("gamblr")
-```
-
-And the development version from
+Get the development version from
 [GitHub](https://github.com/gtwa-bio/gamblr) with:
 
 ``` r
@@ -40,32 +32,20 @@ This is a basic example which shows you how to solve a common problem:
 
 ``` r
 library("gamblr")
-## basic example code
+
+## die gambling game
+die_gamble(20, "same")
+#> Die 1 is: 2.
+#> Die 2 is: 4.
+#> [1] "You lost! -$20"
+#> [1] "Your bank is now: $80"
+
+## coing gambling game
+coin_gamble(20, "heads")
+#> [1] "The coin flip is: tails"
+#> [1] "You lost! -$20"
+#> [1] "Your bank is now: $80"
 ```
-
-What is special about using `README.Rmd` instead of just `README.md`?
-You can include R chunks like so:
-
-``` r
-summary(cars)
-#>      speed           dist       
-#>  Min.   : 4.0   Min.   :  2.00  
-#>  1st Qu.:12.0   1st Qu.: 26.00  
-#>  Median :15.0   Median : 36.00  
-#>  Mean   :15.4   Mean   : 42.98  
-#>  3rd Qu.:19.0   3rd Qu.: 56.00  
-#>  Max.   :25.0   Max.   :120.00
-```
-
-You’ll still need to render `README.Rmd` regularly, to keep `README.md`
-up-to-date.
-
-You can also embed plots, for example:
-
-<img src="man/figures/README-pressure-1.png" width="100%" />
-
-In that case, don’t forget to commit and push the resulting figure
-files, so they display on GitHub!
 
 ## Citation
 
@@ -75,20 +55,6 @@ Please run this yourself to check for any updates on how to cite
 
 ``` r
 print(citation('gamblr'), bibtex = TRUE)
-#> To cite package 'gamblr' in publications use:
-#> 
-#>   Twa G (2024). _gamblr: Toy functions for simple gambling games_. R
-#>   package version 0.99.0, <https://github.com/gtwa-bio/gamblr>.
-#> 
-#> A BibTeX entry for LaTeX users is
-#> 
-#>   @Manual{,
-#>     title = {gamblr: Toy functions for simple gambling games},
-#>     author = {Guy Twa},
-#>     year = {2024},
-#>     note = {R package version 0.99.0},
-#>     url = {https://github.com/gtwa-bio/gamblr},
-#>   }
 ```
 
 Please note that the `gamblr` was only made possible thanks to many
